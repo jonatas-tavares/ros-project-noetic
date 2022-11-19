@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+
+  ubunto-ros:
+    image: jontavpess/ros-project-noetic
+    container_name: ubuntu-ros-noetic
+    stdin_open: true
+    tty: true
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [gpu]

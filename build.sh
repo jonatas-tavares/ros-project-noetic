@@ -1,0 +1,1 @@
+docker build -f noetic.dockerfile -t jontavpess/ros-project-noetic .
