@@ -27,22 +27,24 @@ RUN apt-get -y install ros-$ROSDISTRO-explore-lite
 RUN apt -y install git-all gedit
 RUN apt -y install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
 
-RUN rosdep init
-RUN rosdep update
+#######################################################################################################################
 
-ENV DISPLAY=host.docker.internal:0.0
+# RUN rosdep init
+# RUN rosdep update
 
-# COPY ./scripts /tmp
+# ENV DISPLAY=host.docker.internal:0.0
 
-COPY /bootstrap.sh /
+# # COPY ./scripts /tmp
 
-#CMD /bin/bash -i -c
+# COPY /bootstrap.sh /
 
-RUN echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
-RUN echo "source /root/catkin_ws/devel/setup.bash" >> ~/.bashrc
+# #CMD /bin/bash -i -c
 
-# CMD /bin/bash
+# RUN echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
+# RUN echo "source /root/catkin_ws/devel/setup.bash" >> ~/.bashrc
 
-CMD /bin/bash -c "/bootstrap.sh"
+CMD /bin/bash
 
-# CMD /bin/bash -l -i -c "/tmp/configure_melodic.sh"
+# CMD /bin/bash -c "/bootstrap.sh"
+
+# # CMD /bin/bash -l -i -c "/tmp/configure_melodic.sh"
