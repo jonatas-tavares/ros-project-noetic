@@ -32,7 +32,7 @@ RUN apt -y install python3-rosdep python3-rosinstall python3-rosinstall-generato
 # RUN rosdep init
 # RUN rosdep update
 
-# ENV DISPLAY=host.docker.internal:0.0
+ENV DISPLAY=host.docker.internal:0.0
 
 # # COPY ./scripts /tmp
 
